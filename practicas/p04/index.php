@@ -145,7 +145,13 @@ var_dump($f);
 
 ?>
 
-
+<h2> Ejercicio 7 </h2>
+<p> Usando la variable predefinida $_SERVER, determina lo siguiente: </p> 
+<ul>
+    <li>La versión de Apache y PHP: <?php echo $_SERVER['SERVER_SOFTWARE']; ?></li>
+    <li>El nombre del sistema operativo (servidor): <?php echo php_uname('s'); ?></li>
+    <li>El idioma del navegador (cliente): <?php echo $_SERVER['HTTP_ACCEPT_LANGUAGE']; ?></li>
+</ul>
 
 </body>
 </html>
