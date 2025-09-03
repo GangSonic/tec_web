@@ -5,6 +5,7 @@
     <title>Práctica 3</title>
 </head>
 <body>
+    <h2> Ejercicio 1 </h2>
 
     <p>Determina cuál de las siguientes variables son válidas y explica por qué:</p>
     <p>$_myvar,  $_7var,  myvar,  $myvar,  $var7,  $_element1, $house*5</p>
@@ -65,6 +66,28 @@ $b = &$a;
 <p> d. Describe en y muestra en la página obtenida qué ocurrió en el segundo bloque de
 asignaciones </p> 
 <p> Lo que paso es que pasamo los valores de la variable "a" a las variables "b y c" esto mediante la referecnia <b> "&$ " </b></p>
+
+<h2> Ejercicio 3 </h2>
+<p> Muestra el contenido de cada variable inmediatamente después de cada asignación,
+verificar la evolución del tipo de estas variables (imprime todos los componentes de los
+arreglo): </p> 
+ <?php
+    $a = "PHP5";
+    echo "<p>a = $a</p>";
+    $z[] = &$a;
+    echo "<p>z[0] = {$z[0]}</p>";
+    $b = "5a version de PHP"; 
+    echo "<p>b = $b</p>";
+    $c = (int)$b*10;
+    echo "<p>c = $c</p>";
+    $a .= $b;
+    echo "<p>a = $a</p>";
+    $b *= $c;
+    echo "<p>b = $b</p>";
+    $z[0] = "MySQL";
+    echo "<p>z[0] = {$z[0]}</p>";
+?> 
+
 
 
 </body>
