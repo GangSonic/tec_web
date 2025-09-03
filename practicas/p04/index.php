@@ -5,7 +5,7 @@
     <title>Práctica 3</title>
 </head>
 <body>
-    <h2>Ejercicio 1</h2>
+
     <p>Determina cuál de las siguientes variables son válidas y explica por qué:</p>
     <p>$_myvar,  $_7var,  myvar,  $myvar,  $var7,  $_element1, $house*5</p>
     <?php
@@ -30,5 +30,42 @@
         echo '<li>$house*5 es inválida porque el símbolo * no está permitido.</li>';
         echo '</ul>';
     ?>
+
+     <h2>Ejercicio 2</h2>
+     <p>Proporcionar los valores de $a, $b, $c como sigue:</p>
+     <p>a. Ahora muestra el contenido de cada variable </p> 
+     <?php
+        $a = "ManejadorSQL";
+        $b = 'MySQL';
+        $c = &$a;
+
+        echo "<ul>";
+        echo "<li>a = $a</li>";
+        echo "<li>b = $b</li>";
+        echo "<li>c = $c</li>";
+        echo "</ul>";
+
+    ?>
+
+    <p> b. Agrega al código actual las siguientes asignaciones: </p> 
+     <p> $a = “PHP server”; <br> 
+$b = &$a;
+</P> 
+ <p> c. Vuelve a mostrar el contenido de cada uno </p>
+  
+   <?php
+        $a = "PHP Server";
+        $b = &$a;
+        echo "<ul>";
+        echo "<li>a = $a</li>";
+        echo "<li>b = $b</li>";
+        echo "<li>c = $c</li>";
+        echo "</ul>";
+    ?>
+<p> d. Describe en y muestra en la página obtenida qué ocurrió en el segundo bloque de
+asignaciones </p> 
+<p> Lo que paso es que pasamo los valores de la variable "a" a las variables "b y c" esto mediante la referecnia <b> "&$ " </b></p>
+
+
 </body>
 </html>
