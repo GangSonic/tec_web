@@ -46,6 +46,7 @@
         echo "<li>c = $c</li>";
         echo "</ul>";
 
+       
     ?>
 
     <p> b. Agrega al código actual las siguientes asignaciones: </p> 
@@ -62,6 +63,11 @@ $b = &$a;
         echo "<li>b = $b</li>";
         echo "<li>c = $c</li>";
         echo "</ul>";
+
+        unset($a);
+        unset($b);
+        unset($c);
+            
     ?>
 <p> d. Describe en y muestra en la página obtenida qué ocurrió en el segundo bloque de
 asignaciones </p> 
@@ -82,7 +88,7 @@ arreglo): </p>
     echo "<p>c = $c</p>";
     $a .= $b;
     echo "<p>a = $a</p>";
-    $b *= $c;
+    $b= (int)$b * $c;
     echo "<p>b = $b</p>";
     $z[0] = "MySQL";
     echo "<p>z[0] = {$z[0]}</p>";
@@ -100,6 +106,27 @@ la matriz <b> $GLOBALS </b>  o del modificador global de PHP. </p>
     echo "<p>c = {$GLOBALS['c']}</p>";
     echo "<p>z[0] = {$GLOBALS['z'][0]}</p>";
 ?>
+
+<h2> Ejercicio 5 </h2>
+<p> Dar el valor de las variables $a, $b, $c al final del siguiente script: </p> 
+ <?php
+    $a = "7 personas";
+    $b = (integer) $a;
+    $a = "9E3";
+    $c = (double) $a;
+
+    echo "<p>a = $a</p>";
+    echo "<p>b = $b</p>";
+    echo "<p>c = $c</p>";
+
+    unset($a);
+    unset($b);
+    unset($c);
+?> 
+
+
+
+
 
 </body>
 </html>
