@@ -86,9 +86,20 @@ arreglo): </p>
     echo "<p>b = $b</p>";
     $z[0] = "MySQL";
     echo "<p>z[0] = {$z[0]}</p>";
+
+
 ?> 
 
-
+<h2>Ejercicio 4 </h2> 
+<p> Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de
+la matriz <b> $GLOBALS </b>  o del modificador global de PHP. </p> 
+<?php
+    echo "<h4>Valores de las variables:</h4>";
+    echo "<p>a = {$GLOBALS['a']}</p>";
+    echo "<p>b = {$GLOBALS['b']}</p>";
+    echo "<p>c = {$GLOBALS['c']}</p>";
+    echo "<p>z[0] = {$GLOBALS['z'][0]}</p>";
+?>
 
 </body>
 </html>
