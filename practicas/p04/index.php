@@ -124,7 +124,26 @@ la matriz <b> $GLOBALS </b>  o del modificador global de PHP. </p>
     unset($c);
 ?> 
 
+<h2> Ejercicio 6</h2> 
+ <p> Dar y comprobar el valor booleano de las variables $a, $b, $c, $d, $e y $f y muéstralas
+usando la función var_dump(<datos>). </p> 
 
+<?php
+    $a = "0";
+    $b = "TRUE";
+    $c = FALSE;
+    $d = ($a OR $b);
+    $e = ($a AND $c);
+    $f = ($a XOR $b);
+
+var_dump($a);
+var_dump($b);
+var_dump($c);
+var_dump($d);
+var_dump($e);
+var_dump($f);
+
+?>
 
 
 
