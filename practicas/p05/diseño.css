@@ -1,0 +1,229 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #intro hgroup {
+    margin: 0;
+  }
+  
+  #intro h1 img {
+    width: 100px; /* tamaño del logo */
+    height: auto;
+    display: inline-block;
+    
+  }
+
+  #informacion p img {
+    width: 200px;
+    height: auto;
+    margin: 0 auto; 
+    display: block;
+
+
+  }
+  
+  header h1 {
+    font-size: 2em;
+    margin-top: 10px;
+    color: #fff;
+  }
+  
+  
+  #navegador {
+    background-color: #444;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  #navegador ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #navegador li {
+    display: inline-block;
+    margin: 0 20px;
+  }
+  
+  #navegador a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px;
+  }
+  
+  #navegador a:hover {
+    background-color: #555;
+    border-radius: 5px;
+  }
+  
+
+  section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  section h2 {
+    font-size: 1.8em;
+    color: #333;
+  }
+
+  #Inicio p{
+    color:black;
+  }
+  
+  /* Estilo de los formularios */
+  form fieldset {
+    border: 2px solid #444;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #fafafa;
+  }
+  
+  form legend {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form textarea,
+  form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  form textarea {
+    resize: vertical;
+  }
+  
+  form input[type="submit"],
+  form input[type="reset"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+  }
+  
+  form input[type="submit"]:hover,
+  form input[type="reset"]:hover {
+    background-color: #555;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Estilo de los enlaces de contacto */
+  address p {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  address a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  address a:hover {
+    color: #0073e6;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 1em;
+  }
+  
+  /* Estilos para las opciones de color y características */
+  fieldset legend em {
+    font-style: italic;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  
+  ul li {
+    font-size: 1.1em;
+  }
+  
+  /* Estilo para los enlaces de navegación (barra de navegación) */
+  #navegador a {
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+  }
+  
+  #navegador a:hover {
+    color: #ff6347;
+    text-decoration: underline;
+  }
+  
+  /* Estilos específicos para el formulario y la validación */
+  div[id^="respuesta"] {
+    font-size: 0.9em;
+    color: red;
+    margin-top: 5px;
+  }
+  
+  p {
+    line-height: 1.6;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+  }
+  
+  /* Diseño de la tabla de medidas (talla) */
+  select {
+    padding: 10px;
+    font-size: 1.1em;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  select option {
+    padding: 10px;
+  }
+  

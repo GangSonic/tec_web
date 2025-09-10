@@ -1,0 +1,142 @@
+<!DOCTYPE html >
+<html>
+  <head>
+    <meta charset="utf-8" >
+    <title>Registro al Concurso</title>
+        <style type="text/css">
+      ol, ul { 
+      list-style-type: none;
+      }
+
+    </style>
+       <link rel="stylesheet" href="./diseño.css">
+  </head>
+
+ <body>
+    <header> 
+      <div id="intro"> 
+        <hgroup>
+        <h1> <img src="./logotenis.jpg" alt="Mike"> </h1>
+        <h1>Registro al Concurso &ldquo;Chidos mis Tenis&rdquo;</h1>
+      </hgroup>
+      </div>
+   
+    <nav id="navegador"> 
+        <ul> 
+          <li> <a href= "#Inicio" > Inicio  </a></li> 
+          <li> <a href= "#informacion"> Informacion Personal </a></li>
+          <li> <a href= "#diseño"> Diseña tus tenis </a></li>
+          <li> <a href= "#contacto"> Contactanos </a></li>
+        </ul>
+      </nav>
+
+      <section id="Inicio"> 
+        <h2> ¿Quienes somos? </h2>
+        <p> Empresa multinacional estadounidense dedicada al diseño, fabricación y comercialización de material deportivo, líder a nivel mundial. La empresa fue fundada en 1964 como Blue Ribbons Sports por Phil Knight y Bill Bowerman y se convirtió oficialmente en Mike Inc.</p>
+      </section>
+    <p>¿Quieres cambiar tus viejos tenis por un par personalizado de Tenis Mike&#169;?<br><br>Justifica el por qué tus tenis se <em>tienen que</em> ir y tú puede ser uno de los diez afortunados ganadores.</p>
+
+    <form id="formularioTenis" action="http://52.43.117.247/neo/classroom/tw/concurso.php" method="post">
+    </header>
+   
+    <section id="informacion"> 
+    <h2>Información de Participación</h2>
+    <p> Para poder participara en el concurso, es necesario que llenes tus datos personales. En caso de resultar, !GANADOR!</p>
+      <fieldset>
+        <legend> <b> Información Personal </b></legend>
+        <p> <img src="./tenis.png" alt="Tenis lindes"> </p>
+        <ul>
+          <li>
+          <label for="form-name">Nombre:</label>
+          <input type="text" name="name" id="form-name" onblur="valid_name()">
+          <div id= "respuesta1" style="color: red;"></div>
+        </li>
+<br>          
+          <li><label for="form-email">Dirección de E-mail:</label>
+            <input type="email" name="email" id="form-email" onblur="valid_email()">
+            <div id="respuesta2" style="color: red;"> </div>
+          </li>
+
+          <li><label for="form-tel">Número Telefónico:</label>
+            <input type="tel" name="phone" id="form-tel" onblur="valid_tel()">
+            <div id="respuesta3" style="color: red;"> </div>
+          </li>
+          <li><label for="form-story">Mis tenis son tan feos porque...</label><br>
+            <textarea name="story" rows="4" cols="60" id="form-story" placeholder="No más de 300 caracteres de longitud" onblur="valid_razon()"></textarea>
+            <div id="respuesta4" style="color: red;"> </div>
+          </li>
+        </ul>
+      </fieldset>
+
+    </section>
+
+      <section id="diseño">
+      <h2>Diseña tus Mike personalizados:</h2>
+      <p> Pon aprueba tu creatividad y diseña tus tenis ideales. </p>
+
+      <fieldset>
+        <legend> <b>Diseño personalizado del Tenis  </b></legend>
+
+        <fieldset>
+          <legend>Color <em>(escoge uno)</em>:</legend>
+          <ul>
+            <li><label><input type="radio" id="radio1" name="color" value="red"> Rojo</label></li>
+            <li><input type="radio" id="radio2" name="color" value="blue" > Azul</li>
+            <li><input type="radio" id="radio3" name="color" value="black"> Negro</li>
+            <li><input type="radio" id= "radio4" name="color" value="silver"> Plateado</li>
+
+            </ul>
+        </fieldset>
+
+        <fieldset>
+          <legend>Características <em>(escoge tatnas como quieras)</em></legend>
+          <ul>
+            <li><input type="checkbox" id="caract1" name="features[]" value="laces"> Cordones Brillantes</li>
+            <li><input type="checkbox" id="caract2" name="features[]" value="logo" > Logo Metálico</li>
+            <li><input type="checkbox" id="caract3" name="features[]" value="heels"> Suela Luminosa</li>
+            <li><input type="checkbox" id="caract4" name="features[]" value="mp3"> WiFi-integrado</li>
+          </ul>
+        </fieldset>
+
+        <fieldset>
+          <legend>Talla</legend>
+          <p>Las medidas reflejan el estándar masculino: 
+            <select name="size" size="1">
+            <option value="">Seleccionar</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+              
+              
+            </select>
+            <div id="respuesta5" style="color: red;"></div>
+          </p>
+        </fieldset>
+
+      </fieldset>
+      </section>
+      <p>
+        <input type="submit" value="¡Chidos mis Tenis!">
+        <input type="reset">
+      </p>
+
+    <section id="contacto"> 
+      <h2> Contacto</h2>
+      <address> 
+        <p> Email: 
+        <a href="jas@tustenis.com"> jas@tustenis.com </a></p>
+        <p> Telefono: 22 22 22 33 55</p>
+      </address>
+    </section>
+     <footer> 
+      <p> &copy; 2024 Tenis Mike&#169;. Todos los derechos reservados. </p>
+     </footer>
+    </form>
+  </body>
+</html>
