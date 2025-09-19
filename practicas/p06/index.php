@@ -62,6 +62,22 @@
      conv_ascii(); 
 ?> 
 
+<h2> Ejercicio 5 </h2> 
+
+ <form action="http://localhost/tec_web/practicas/p06/src/form.php" method="post">
+        <fieldset>
+            <legend>Información para acceder: </legend>
+
+            <label for="edad">Edad: </label><input type="number" name="edad" required>
+            <label for="sexo">Sexo: </label>
+            <select name="sexo" id="sexo" required>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option> 
+            </select>
+        </fieldset>
+        <input type="submit" value="Enviar">
+    </form>
+
 
 
 
