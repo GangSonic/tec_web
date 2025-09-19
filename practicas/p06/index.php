@@ -72,6 +72,41 @@ $stop= ($valor1%2 != 0) && ($valor2%2 ==0) && ($valor3%2 !=0 );
 
 
 
+<h2> Ejercicio 3 </h2> 
+<?php
+
+?> 
+
+<h2> Ejercicio 4 </h2> 
+<?php
+    for($i=97; $i<=122; $i++)
+    {
+        $letra[$i]=chr($i); 
+
+    }
+
+echo '<table border="1" cellpadding="6" cellspacing="0">';
+echo '<thead>';
+echo '<tr>';
+echo '<th>Clave (ASCII)</th>';
+echo '<th>Valor</th>';
+echo '</tr>';
+
+
+
+    foreach($letra as $key => $value)
+    {
+        
+    echo '<tr>';
+    echo '<td>' . $key . '</td>';
+    echo '<td>' . $value . '</td>';
+    echo '</tr>';
+    }
+    echo '</table>';
+?> 
+
+
+
 
 
 
