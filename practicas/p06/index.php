@@ -39,6 +39,39 @@
         }
     ?>
 
+    
+    <h2> Ejercicio 2 </h2>
+<?php
+$matriz= []; 
+$contador=0; 
+
+do{
+$valor1 = random_int(0,1000);  
+$valor2 = random_int(0,1000); 
+$valor3 = random_int(0,1000); 
+
+
+$matriz[] = [$valor1, $valor2, $valor3];
+$contador++; 
+
+    
+
+$stop= ($valor1%2 != 0) && ($valor2%2 ==0) && ($valor3%2 !=0 );
+}while(!$stop);
+
+    foreach($matriz as $fila)
+    {
+      echo implode(", ", $fila) . "<br>";
+    }
+ 
+    $veces= $contador* 3; 
+    echo "<br><strong> $veces número obtenidos en $contador iteraciones</strong>"; 
+ 
+
+?> 
+
+
+
 
 
 
