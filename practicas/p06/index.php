@@ -9,17 +9,10 @@
     <h2>Ejercicio 1</h2>
     <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7</p>
     <?php
+         require_once __DIR__ .'/src/funciones.php';
         if(isset($_GET['numero']))
         {
-            $num = $_GET['numero'];
-            if ($num%5==0 && $num%7==0)
-            {
-                echo '<h3>R= El número '.$num.' SÍ es múltiplo de 5 y 7.</h3>';
-            }
-            else
-            {
-                echo '<h3>R= El número '.$num.' NO es múltiplo de 5 y 7.</h3>';
-            }
+            multiplos($_GET['numero']);
         }
     ?>
 
@@ -42,31 +35,8 @@
     
     <h2> Ejercicio 2 </h2>
 <?php
-$matriz= []; 
-$contador=0; 
-
-do{
-$valor1 = random_int(0,1000);  
-$valor2 = random_int(0,1000); 
-$valor3 = random_int(0,1000); 
-
-
-$matriz[] = [$valor1, $valor2, $valor3];
-$contador++; 
-
-    
-
-$stop= ($valor1%2 != 0) && ($valor2%2 ==0) && ($valor3%2 !=0 );
-}while(!$stop);
-
-    foreach($matriz as $fila)
-    {
-      echo implode(", ", $fila) . "<br>";
-    }
- 
-    $veces= $contador* 3; 
-    echo "<br><strong> $veces número obtenidos en $contador iteraciones</strong>"; 
- 
+     require_once __DIR__ .'/src/funciones.php';
+        matriz_rep(); 
 
 ?> 
 
@@ -75,34 +45,21 @@ $stop= ($valor1%2 != 0) && ($valor2%2 ==0) && ($valor3%2 !=0 );
 <h2> Ejercicio 3 </h2> 
 <?php
 
+    require_once __DIR__ .'/src/funciones.php';
+    if(isset($_GET['numero'])){
+        num_multiplo($_GET['numero']); 
+
+        echo '<br>'; 
+        echo '<p>La función de abajo es la misma función de arriba pero ahora con un do while!!</p>'; 
+        num_multiplo_dado_variante($_GET['numero']); 
+    }
+
 ?> 
 
 <h2> Ejercicio 4 </h2> 
 <?php
-    for($i=97; $i<=122; $i++)
-    {
-        $letra[$i]=chr($i); 
-
-    }
-
-echo '<table border="1" cellpadding="6" cellspacing="0">';
-echo '<thead>';
-echo '<tr>';
-echo '<th>Clave (ASCII)</th>';
-echo '<th>Valor</th>';
-echo '</tr>';
-
-
-
-    foreach($letra as $key => $value)
-    {
-        
-    echo '<tr>';
-    echo '<td>' . $key . '</td>';
-    echo '<td>' . $value . '</td>';
-    echo '</tr>';
-    }
-    echo '</table>';
+     require_once __DIR__ .'/src/funciones.php';
+     conv_ascii(); 
 ?> 
 
 
