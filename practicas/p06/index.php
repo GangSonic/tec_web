@@ -79,6 +79,22 @@
     </form>
 
 
+<h2> Ejercicio 6 </h2> 
+
+
+
+<form action="http://localhost/tec_web/practicas/p06/src/funciones.php" method="POST">
+        <fieldset>
+            <legend>Consulta</legend>
+            <label for="matricula">Matrícula del vehículo:</label>
+            <input type="text" id="matricula" name="matricula" placeholder="Ej. ABC1234" required>
+            <button type="submit">Consultar</button>
+        </fieldset>
+    </form>
+    <br>
+    <form action="http://localhost/tec_web/practicas/p06/src/funciones.php" method="POST">
+        <button type="submit" name="todos_los_vehiculos">Mostrar vehículos registrados</button>
+    </form>
 
 
 
