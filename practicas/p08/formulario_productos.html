@@ -1,0 +1,42 @@
+<!DOCTYPE html >
+<html>
+
+  <head>
+    <meta charset="utf-8" >
+    <title>Registro de Productos</title>
+    <style type="text/css">
+      ol, ul { 
+      list-style-type: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>PON A LA VENTA UN PRODUCTO</h1>
+
+    <form id="formularioProductos" action="http://localhost/tec_web/practicas/p08/set_producto_v2.php" method="post">
+
+    <h2>Inserta un producto a la base de datos:</h2>
+
+      <fieldset>
+        <legend>Ingresa los campos que se te solicitan.</legend>
+
+        <ul>
+          <li><label for="form-name">Nombre del producto:</label> <input type="text" name="name" id="form-name"></li>
+          <li><label for="form-brand">Marca del producto:</label><input type="text" name="brand" id="form-brand"></li>
+          <li><label for="form-mode">Modelo del producto:</label><input type="text" name="model" id="form-model"></li>
+          <li><label for="form-price">Precio del producto:</label><input type="number" name="price" id="form-price"></li>
+          <li><label for="form-desc">Descripción del producto:</label><br><textarea name="desc" rows="4" cols="60" id="form-desc" placeholder="No más de 250 caracteres de longitud"></textarea></li>
+          <li><label for="form-unit">Unidades del producto:</label><input type="number" name="unit" id="form-unit"></li>
+          
+        </ul>
+      </fieldset>
+
+      <p>
+        <input type="submit" value="Enviar productos">
+        <input type="reset">
+      </p>
+
+    </form>
+  </body>
+</html>
