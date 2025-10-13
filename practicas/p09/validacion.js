@@ -58,9 +58,9 @@ document.getElementById("formularioProductos").addEventListener("submit", functi
             }
 
             if (imagen === '') {
-                imagen = 'img/imagen.png';
-            } else if (!/^(img\/)[a-zA-Z0-9_-]+(\.png)$/.test(imagen)) {
-                error_imagen.textContent = 'La ruta de la imagen debe ser válida y tener el formato img/nombredelarchivo.png.';
+                imagen = 'img/imagen.jpg';
+            } else if (!/^(img\/)[a-zA-Z0-9_-]+(\.jpg)$/.test(imagen)) {
+                error_imagen.textContent = 'La ruta de la imagen debe ser válida y tener el formato img/nombredelarchivo.jpg.';
                 isValid = false;
             }
 
