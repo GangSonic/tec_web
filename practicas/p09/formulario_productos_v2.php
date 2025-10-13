@@ -71,6 +71,10 @@ $link->close();
                 <label for="form-unit">Unidades del producto:</label>
                 <input type="number" name="unit" id="form-unit" value="<?= htmlspecialchars($producto['unidades'] ?? '', ENT_QUOTES, 'UTF-8') ?>" required="required" min="0" />
             </li>
+            <li> 
+                <label for="form-image">Imagen del producto:</label>
+                <input type="url" name="img" id="form-image" value="<?= htmlspecialchars($producto['imagen'] ?? '', ENT_QUOTES, 'UTF-8') ?>" required="required" />
+            </li>
         </ul>
     </fieldset>
     <p>

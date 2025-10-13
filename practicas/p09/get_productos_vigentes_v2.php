@@ -22,7 +22,7 @@
 
 
 
-@$link = new mysqli('localhost', 'root', 'cinepolis', 'marketzone');
+@$link = new mysqli('localhost', 'root', 'pantera44', 'marketzone');
 if ($link->connect_errno) {
     die('Falló la conexión: ' . $link->connect_error . '<br/>');
 }
