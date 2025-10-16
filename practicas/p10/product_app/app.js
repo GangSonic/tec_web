@@ -162,11 +162,72 @@ function buscarProducto(e)
     client.send("searchTerm="+searchTerm);
 }
 
+function agregarProducto(e) {
+    e.preventDefault(); // Evita que se recargue la página
+
+    var productoJsonString = document.getElementById('description').value;
+    var finalJSON = JSON.parse(productoJsonString);
+
+    if (!finalJSON.precio || finalJSON.precio < 0) {
+        alert("El precio debe ser mayor a 0");
+        return;
+    }
+    if (!finalJSON.unidades || finalJSON.unidades < 0) {
+        alert("Las unidades deben ser mayor a 0");
+        return;
+    }
+    if (!finalJSON.modelo || finalJSON.modelo.trim() === "") {
+        alert("El modelo no puede estar vacío");
+        return;
+    }
+    if (!finalJSON.marca || finalJSON.marca.trim() === "") {
+        alert("La marca no puede estar vacía");
+        return;
+    }
+    if (!finalJSON.detalles || finalJSON.detalles.trim() === "") {
+        alert("Los detalles no pueden estar vacíos");
+        return;
+    }
+    if (!finalJSON.imagen || finalJSON.imagen.trim() === "") {
+        alert("La imagen no puede estar vacía");
+        return;
+    }
+
+    finalJSON['nombre'] = document.getElementById('name').value;
+    if (!finalJSON.nombre || finalJSON.nombre.trim() === "") {
+        alert("El nombre no puede estar vacío");
+        return;
+    }
+
+    productoJsonString = JSON.stringify(finalJSON, null, 2);
+
+    var client = getXMLHttpRequest();
+    client.open('POST', './backend/create.php', true);
+    client.setRequestHeader('Content-Type', "application/json;charset=UTF-8");
+    client.onreadystatechange = function () {
+        if (client.readyState == 4 && client.status == 200) {
+            alert(client.responseText);
+        }
+    };
+    client.send(productoJsonString); // Se envía el JSON
+}
+
+
 function init() {
     /**
      * Convierte el JSON a string para poder mostrarlo
      * ver: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/JSON
      */
+    var baseJSON = {
+        "precio": 0,
+        "unidades": 1,
+        "modelo": "XX-000",
+        "marca": "NA",
+        "detalles": "NA",
+        "imagen": "img/imagen.png"
+    };
     var JsonString = JSON.stringify(baseJSON,null,2);
     document.getElementById("description").value = JsonString;
 }
+
+
