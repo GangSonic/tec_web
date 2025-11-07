@@ -1,6 +1,11 @@
 <?php
-    header('Content-Type: application/json; charset=utf-8');
     include_once __DIR__.'/database.php';
+
+      $conexion->set_charset("utf8");
+    
+    //HEADER (estaba faltando)
+    header('Content-Type: application/json; charset=utf-8');
+
 
     // SE CREA EL ARREGLO QUE SE VA A DEVOLVER EN FORMA DE JSON
     $data = array();
@@ -15,11 +20,14 @@
 
             if(!is_null($rows)) {
                 // SE CODIFICAN A UTF-8 LOS DATOS Y SE MAPEAN AL ARREGLO DE RESPUESTA
+                /*
                 foreach($rows as $num => $row) {
                     foreach($row as $key => $value) {
                         $data[$num][$key] = utf8_encode($value);
                     }
                 }
+                */
+                $data = $rows;
             }
 			$result->free();
 		} else {

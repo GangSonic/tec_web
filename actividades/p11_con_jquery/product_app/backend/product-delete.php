@@ -1,6 +1,10 @@
 <?php
-    header('Content-Type: application/json; charset=utf-8');
     include_once __DIR__.'/database.php';
+
+     $conexion->set_charset("utf8");
+    
+    //HEADER (estaba faltando)
+    header('Content-Type: application/json; charset=utf-8');
 
     // SE CREA EL ARREGLO QUE SE VA A DEVOLVER EN FORMA DE JSON
     $data = array(
@@ -8,8 +12,8 @@
         'message' => 'La consulta falló'
     );
     // SE VERIFICA HABER RECIBIDO EL ID
-    if( isset($_POST['id']) ) {
-        $id = $_POST['id'];
+    if( isset($_GET['id']) ) {
+        $id = $_GET['id'];
         // SE REALIZA LA QUERY DE BÚSQUEDA Y AL MISMO TIEMPO SE VALIDA SI HUBO RESULTADOS
         $sql = "UPDATE productos SET eliminado=1 WHERE id = {$id}";
         if ( $conexion->query($sql) ) {

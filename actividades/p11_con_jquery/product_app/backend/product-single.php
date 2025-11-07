@@ -1,5 +1,4 @@
 <?php
-    header('Content-Type: application/json; charset=utf-8');
     include_once __DIR__.'/database.php';
 
     // SE CREA EL ARREGLO QUE SE VA A DEVOLVER EN FORMA DE JSON
@@ -14,9 +13,12 @@
 
             if(!is_null($row)) {
                 // SE CODIFICAN A UTF-8 LOS DATOS Y SE MAPEAN AL ARREGLO DE RESPUESTA
-                foreach($row as $key => $value) {
+               
+               /* foreach($row as $key => $value) {
                     $data[$key] = utf8_encode($value);
                 }
+                    */ 
+                $data = $row;
             }
             $result->free();
         } else {
