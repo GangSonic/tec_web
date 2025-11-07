@@ -1,4 +1,5 @@
 <?php
+    header('Content-Type: application/json; charset=utf-8');
     include_once __DIR__.'/database.php';
 
     // SE CREA EL ARREGLO QUE SE VA A DEVOLVER EN FORMA DE JSON

@@ -22,7 +22,7 @@ $(document).ready(function(){
             type: 'GET',
             success: function(response) {
                 // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
-                const productos = JSON.parse(response);
+                const productos = response;
             
                 // SE VERIFICA SI EL OBJETO JSON TIENE DATOS
                 if(Object.keys(productos).length > 0) {
@@ -68,7 +68,7 @@ $(document).ready(function(){
                 success: function (response) {
                     if(!response.error) {
                         // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
-                        const productos = JSON.parse(response);
+                        const productos = response;
                         
                         // SE VERIFICA SI EL OBJETO JSON TIENE DATOS
                         if(Object.keys(productos).length > 0) {
@@ -137,7 +137,7 @@ $(document).ready(function(){
         $.post(url, postData, (response) => {
             //console.log(response);
             // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
-            let respuesta = JSON.parse(response);
+            let respuesta = response;
             // SE CREA UNA PLANTILLA PARA CREAR INFORMACIÓN DE LA BARRA DE ESTADO
             let template_bar = '';
             template_bar += `
@@ -174,7 +174,7 @@ $(document).ready(function(){
         const id = $(element).attr('productId');
         $.post('./backend/product-single.php', {id}, (response) => {
             // SE CONVIERTE A OBJETO EL JSON OBTENIDO
-            let product = JSON.parse(response);
+            let product = response;
             // SE INSERTAN LOS DATOS ESPECIALES EN LOS CAMPOS CORRESPONDIENTES
             $('#name').val(product.nombre);
             // EL ID SE INSERTA EN UN CAMPO OCULTO PARA USARLO DESPUÉS PARA LA ACTUALIZACIÓN
@@ -190,6 +190,9 @@ $(document).ready(function(){
             
             // SE PONE LA BANDERA DE EDICIÓN EN true
             edit = true;
+
+            ///Cambiar el boton "modificar productos" 
+            $('button.btn-primary').text("Modificar Producto");
         });
         e.preventDefault();
     });    
