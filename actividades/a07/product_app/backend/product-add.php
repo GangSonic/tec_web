@@ -1,24 +1,25 @@
 <?php
-    use TECWEB\MYAPI\Products as Products;
-    include_once __DIR__.'/database.php';
-    //creacion d eobjeto con el constructor
-    $prodObj = new Products ('root', 'pantera44', 'marketzone');
-    //llamada al metodo add
-    $prodObj->add(); 
-    //mostrar respuesta 
-    echo $prodObj->getData();
+     use TECWEB\MYAPI\Products as Products;
+    require_once __DIR__.'/myapi/Products.php';
 
-
-    // SE OBTIENE LA INFORMACIÓN DEL PRODUCTO ENVIADA POR EL CLIENTE
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $proObj = new Products('root', 'pantera44', 'marketzone');
+        echo $proObj->add( json_decode( json_encode($_POST) ) );
+    } else {
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'Método no permitido'
+        ], JSON_PRETTY_PRINT);
+    }
     /*
-    $producto = file_get_contents('php://input');
+    // SE OBTIENE LA INFORMACIÓN DEL PRODUCTO ENVIADA POR EL CLIENTE
     $data = array(
         'status'  => 'error',
         'message' => 'Ya existe un producto con ese nombre'
     );
-    if(!empty($producto)) {
-        // SE TRANSFORMA EL STRING DEL JASON A OBJETO
-        $jsonOBJ = json_decode($producto);
+    if(isset($_POST['nombre'])) {
+        // SE TRANSFORMA EL POST A UN STRING EN JSON, Y LUEGO A OBJETO
+        $jsonOBJ = json_decode( json_encode($_POST) );
         // SE ASUME QUE LOS DATOS YA FUERON VALIDADOS ANTES DE ENVIARSE
         $sql = "SELECT * FROM productos WHERE nombre = '{$jsonOBJ->nombre}' AND eliminado = 0";
 	    $result = $conexion->query($sql);
@@ -41,5 +42,6 @@
 
     // SE HACE LA CONVERSIÓN DE ARRAY A JSON
     echo json_encode($data, JSON_PRETTY_PRINT);
-    */
-?>
+*/ 
+
+    ?>
