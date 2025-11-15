@@ -20,11 +20,12 @@ $(document).ready(function(){
         $.ajax({
             url: './backend/product-list.php',
             type: 'GET',
+            dataType: 'json',
             success: function(response) {
                 console.log(response);
                 // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
-                const productos = JSON.parse(response);
-            
+            //    const productos = JSON.parse(response);
+            const productos = response;
                 // SE VERIFICA SI EL OBJETO JSON TIENE DATOS
                 if(Object.keys(productos).length > 0) {
                     // SE CREA UNA PLANTILLA PARA CREAR LAS FILAS A INSERTAR EN EL DOCUMENTO HTML
@@ -55,7 +56,12 @@ $(document).ready(function(){
                     // SE INSERTA LA PLANTILLA EN EL ELEMENTO CON ID "productos"
                     $('#products').html(template);
                 }
-            }
+            },
+            error: function(xhr, status, error) {
+            console.error('Error en product-list.php:');
+            console.error('Status:', status);
+            console.error('Response:', xhr.responseText); // ← Aquí verás el HTML de error
+        }
         });
     }
 
