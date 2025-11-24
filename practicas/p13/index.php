@@ -24,6 +24,7 @@ $app->get("/hola[/{nombre}]", function( Request $request, Response $response, $a
     return $response; 
 }); 
 
+//mensaje desde formulario
 $app->post("/pruebapost", function($request, $response,$args){
     $reqPost = $request->getParsedBody(); 
     $val1 = $reqPost["val1"];
@@ -33,6 +34,29 @@ $app->post("/pruebapost", function($request, $response,$args){
     return $response; 
 }); 
 
+///obtener json de prueba
+$app->get("/testjson",function($request, $response, $args){
+    $data[0]["nombre"]="Ana";
+    $data[0]["apellidos"]="Sanchez";
+    $data[1]["nombre"]="Luis";
+    $data[1]["apellidos"]="Garcia";
+    $response->getBody()->write(json_encode($data, JSON_PRETTY_PRINT));
+    return $response; 
+});
+
+///post json de prueba
+$app->post("/testjson2", function($request, $response, $args){
+    $reqBody = $request->getParsedBody();
+    $val1 = $reqBody["val1"];
+    $val2 = $reqBody["val2"];
+
+      $data = [
+        'valores' => $val1 . " " . $val2,
+    ];
+    
+    $response->getBody()->write(json_encode($data));
+    return $response->withHeader('Content-Type', 'application/json');
+});
 
 $app->run();
 
